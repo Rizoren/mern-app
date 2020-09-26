@@ -1,0 +1,6 @@
+{
+  "port": 5000,
+  "jwtSecret": "secret",
+  "mongoURI": "mongodb+srv://system:dbPassword@cluster0.ojcbg.mongodb.net/merndb?retryWrites=true&w=majority",
+  "baseURL": "http://localhost:5000"
+}
