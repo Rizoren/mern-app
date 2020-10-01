@@ -4,6 +4,8 @@ import {LinksPage} from './pages/LinksPage'
 import {CreatePage} from './pages/CreatePage'
 import {DetailPage} from './pages/DetailPage'
 import {AuthPage} from './pages/AuthPage'
+import {ProductsPage} from "./pages/ProductsPage";
+import {CreateProductPage} from "./pages/CreateProductPage";
 
 export const useRoutes = isAuthenticated => {
     if (isAuthenticated) {
@@ -18,7 +20,13 @@ export const useRoutes = isAuthenticated => {
                 <Route path="/detail/:id" exact>
                     <DetailPage />
                 </Route>
-                <Redirect to="/create" />
+                <Route path="/products" exact>
+                    <ProductsPage />
+                </Route>
+                <Route path="/new-product" exact>
+                    <CreateProductPage />
+                </Route>
+                {/*<Redirect to="/create" />*/}
             </Switch>
         )
     }
