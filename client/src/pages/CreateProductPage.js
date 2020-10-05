@@ -12,7 +12,7 @@ export const CreateProductPage = () => {
     const pressHandler = async event => {
         if (event.key === 'Enter') {
             try {
-                const data = await request('/api/product/add', 'POST', {name},
+                await request('/api/product', 'POST', {name},
                     {Authorization: `Bearer ${auth.token}`})
                 history.push(`/products`)
             } catch (e) {}

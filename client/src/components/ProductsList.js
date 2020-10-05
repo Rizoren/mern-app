@@ -1,7 +1,8 @@
 import React from "react"
-import {Link} from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
 
 export const ProductsList = ({ products }) => {
+    const history = useHistory()
     if (!products.length) {
         return (
             <p className="center">Данных нет</p>
@@ -14,7 +15,10 @@ export const ProductsList = ({ products }) => {
             <tr>
                 <th>№</th>
                 <th>Наименование</th>
-                <th></th>
+                <th>
+                    <button className="btn yellow darken-4"
+                            onClick={() => history.push('/new-product')}>Добавить</button>
+                </th>
             </tr>
             </thead>
 
@@ -25,7 +29,7 @@ export const ProductsList = ({ products }) => {
                        <td>{index + 1}</td>
                        <td>{product.name}</td>
                        <td>
-                           <Link to={`/product/${product._id}`}>Открыть</Link>
+                           <Link to={`/products/${product._id}`}>Открыть</Link>
                        </td>
                    </tr>
                )

@@ -3,7 +3,7 @@ const Product = require('../models/Product')
 const auth = require('../middleware/auth.middleware')
 const router = Router()
 
-router.post('/add', auth, async (req, res) => {
+router.post('/', auth, async (req, res) => {
     try {
         const {name} = req.body
 
@@ -28,6 +28,21 @@ router.get('/', auth, async (req, res) => {
     try {
         const products = await Product.find()
         res.json(products)
+    } catch (e) {
+        res.status(500).json({ message: 'Что-то пошло не так, попробуйте позже' })
+    }
+})
+
+router.post('/:id', auth, async (req, res) => {
+    try {
+        const {product} = req.body
+
+        const updProduct = await Product.findOneAndUpdate({_id: req.params.id}, product, {
+            new: true,
+            upsert: true
+        });
+
+        return res.status(200).json({})
     } catch (e) {
         res.status(500).json({ message: 'Что-то пошло не так, попробуйте позже' })
     }

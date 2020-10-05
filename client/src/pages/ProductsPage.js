@@ -3,10 +3,8 @@ import {useHttp} from "../hooks/http.hook";
 import {AuthContext} from "../context/AuthContext";
 import {Loader} from "../components/Loader";
 import {ProductsList} from "../components/ProductsList";
-import {useHistory} from "react-router-dom"
 
 export const ProductsPage = () => {
-    const history = useHistory()
     const [products, setProducts] = useState([])
     const {request, loading} = useHttp()
     const {token} = useContext(AuthContext)
@@ -29,12 +27,6 @@ export const ProductsPage = () => {
     }
     return (
         <div>
-            <div className="row">
-                <button className="btn yellow darken-4"
-                        style={{marginRight: 10}}
-                        onClick={() => history.push('/new-product')}
-                >Добавить</button>
-            </div>
             { !loading && products && <ProductsList products={products} /> }
         </div>
     )
