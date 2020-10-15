@@ -15,4 +15,4 @@ const schema = new Schema({
     },
 })
 
-module.exports = model('Favorites', schema)
+module.exports = model('Favorite', schema)

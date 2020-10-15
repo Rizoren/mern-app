@@ -1,10 +1,16 @@
 import React from "react"
-import {Link} from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
 
 export const LinksList = ({ links }) => {
+    const history = useHistory()
+
     if (!links.length) {
         return (
-            <p className="center">Данных нет</p>
+            <div className="row center">
+                <p className="center">Данных нет</p>
+                <button className="btn yellow darken-4"
+                        onClick={() => history.push('/create')}>Добавить</button>
+            </div>
         )
     }
 
@@ -15,7 +21,10 @@ export const LinksList = ({ links }) => {
                 <th>№</th>
                 <th>Источник</th>
                 <th>Сокращенная ссылка</th>
-                <th></th>
+                <th>
+                    <button className="btn yellow darken-4"
+                            onClick={() => history.push('/create')}>Добавить</button>
+                </th>
             </tr>
             </thead>
 

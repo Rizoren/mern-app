@@ -5,7 +5,11 @@ export const ProductsList = ({ products }) => {
     const history = useHistory()
     if (!products.length) {
         return (
-            <p className="center">Данных нет</p>
+            <div className="row">
+                <p className="center">Данных нет</p>
+                <button className="btn yellow darken-4"
+                        onClick={() => history.push('/new-product')}>Добавить</button>
+            </div>
         )
     }
 

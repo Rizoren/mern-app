@@ -8,7 +8,6 @@ const schema = new Schema({
     },
     complexity: {
         type: Number,
-        required: true,
     },
     stages: [{
         num: {

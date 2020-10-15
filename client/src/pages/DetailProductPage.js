@@ -67,10 +67,6 @@ export const DetailProductPage = () => {
                 >Отмена</button>
 
             </div>
-        <button className="btn grey lighten-1 black-text"
-                           onClick={() => console.log(product)}
-                           disabled={loading}
-        >Log</button>
         </>
     )
 }
