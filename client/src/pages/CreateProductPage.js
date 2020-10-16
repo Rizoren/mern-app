@@ -26,7 +26,7 @@ export const CreateProductPage = () => {
     return (
         <div className="row">
             <div className="col s8 offset-s2">
-                <h1>Create product</h1>
+                <h1>Сведения о продукте</h1>
                 <div className="input-field">
                     <input
                         placeholder="Введите наименование продукта"

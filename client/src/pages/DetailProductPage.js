@@ -41,7 +41,7 @@ export const DetailProductPage = () => {
         <>
             <div className="row">
                 <div className="col s8 offset-s2">
-                    <h1>Detail product</h1>
+                    <h1>Сведения о продукте</h1>
                     <div className="input-field">
                         <input
                             placeholder="Введите наименование продукта"
@@ -55,7 +55,7 @@ export const DetailProductPage = () => {
                     </div>
                 </div>
             </div>
-            <div className="row">
+            <div className="row right">
                 <button className="btn yellow darken-4"
                         style={{marginRight: 10}}
                         onClick={submitHandler}

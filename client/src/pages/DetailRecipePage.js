@@ -58,7 +58,7 @@ export const DetailRecipePage = () => {
         <>
             <div className="row">
                 <div className="col s8 offset-s2">
-                    <h1>Detail recipe</h1>
+                    <h1>Сведения о рецепте</h1>
                     <div className="input-field">
                         <input
                             placeholder="Введите наименование рецепта"
@@ -82,7 +82,7 @@ export const DetailRecipePage = () => {
                         />
                         <label htmlFor="name">Сложность рецепта</label>
                     </div>
-                    <h3>Ingredients</h3>
+                    <h3>Ингридиенты</h3>
                     <table id="ingredients" className="highlight">
                         <thead>
                         <tr>
@@ -114,28 +114,28 @@ export const DetailRecipePage = () => {
                     {/* <!-- Modal Structure -->*/}
                     <div id="modal1" className="modal">
                         <div className="modal-content" style={{height: '400px'}}>
-                            <h4>Ingredient info</h4>
+                            <h4>Сведения об ингридиенте</h4>
+                            <div className="input-field">
+                                <Select name="ingredients" options={product.map(t => { return { value: t._id, label: t.name} }) } />
+                            </div>
                             <div className="input-field">
                                 <input
                                     placeholder="Введите объем продукта"
                                     type="text"
                                     name="ingredients-value"
                                     id="ingredients-value"
-                                    value={recipe.ingredients}
+                                    value={recipe.ingredients.value}
                                     onChange={handlerChange}
                                 />
-                                <label htmlFor="name">Сложность рецепта</label>
-                            </div>
-                            <div className="input-field col s12">
-                                <Select name="ingredients" options={product.map(t => { return { value: t._id, label: t.name} }) } />
+                                <label htmlFor="ingredients-value">Количество</label>
                             </div>
                         </div>
                         <div className="modal-footer">
-                            <button className="modal-close waves-effect waves-green btn-flat">Agree</button>
+                            <button className="modal-close waves-effect waves-green btn-flat">Сохранить</button>
                         </div>
                     </div>
 
-                    <h3>Stages</h3>
+                    <h3>Этапы</h3>
                     <table id="ingredients" className="highlight">
                         <thead>
                         <tr>
@@ -165,8 +165,8 @@ export const DetailRecipePage = () => {
                     {/* <!-- Modal Structure -->*/}
                     <div id="modal2" className="modal">
                         <div className="modal-content" style={{height: '400px'}}>
-                            <h4>Stage info</h4>
-                            <p>Stage: 0</p>
+                            <h4>Сведения о этапе</h4>
+                            <p>Этап: 0</p>
                             <div className="input-field">
                                 <textarea
                                     placeholder="Введите описание этапа рецепта"
@@ -179,7 +179,7 @@ export const DetailRecipePage = () => {
                             </div>
                         </div>
                         <div className="modal-footer">
-                            <button className="modal-close waves-effect waves-green btn-flat">Agree</button>
+                            <button className="modal-close waves-effect waves-green btn-flat">Сохранить</button>
                         </div>
                     </div>
                 </div>

@@ -29,7 +29,7 @@ export const CreateRecipePage = () => {
         <>
         <div className="row">
             <div className="col s8 offset-s2">
-                <h1>Create recipe</h1>
+                <h1>Создание рецепта</h1>
                 <div className="input-field">
                     <input
                         placeholder="Введите наименование рецепта"

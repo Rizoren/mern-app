@@ -26,7 +26,7 @@ export const DetailRecipeViewPage = () => {
         <>
             <div className="row">
                 <div className="col s8 offset-s2">
-                    <h1>Detail recipe</h1>
+                    <h1>Сведения о рецепте</h1>
                     <div className="input-field">
                         <input
                             placeholder="Введите наименование рецепта"

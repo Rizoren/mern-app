@@ -26,7 +26,7 @@ export const CreatePage = () => {
     return (
         <div className="row">
             <div className="col s8 offset-s2">
-                <h1>Create link</h1>
+                <h1>Создать ссылку</h1>
                 <div className="input-field">
                     <input
                         placeholder="Введите ссылку"
